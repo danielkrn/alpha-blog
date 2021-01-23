@@ -1452,3 +1452,128 @@ Completed 200 OK in 1169ms (Views: 585.8ms | ActiveRecord: 0.2ms | Allocations: 
 Completed 200 OK in 587ms (Views: 7.9ms | ActiveRecord: 0.4ms | Allocations: 21545)
 
 
+Started GET "/" for ::1 at 2021-01-23 17:08:32 +0100
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 5.9ms | Allocations: 218)
+  Rendered layout layouts/application.html.erb (Duration: 40.8ms | Allocations: 3156)
+Completed 200 OK in 91ms (Views: 54.0ms | ActiveRecord: 0.0ms | Allocations: 5869)
+
+
+Started GET "/about" for ::1 at 2021-01-23 17:08:32 +0100
+Processing by PagesController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (Duration: 1.8ms | Allocations: 105)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 1385)
+Completed 200 OK in 10ms (Views: 7.6ms | ActiveRecord: 0.0ms | Allocations: 1892)
+
+
+Started GET "/articles" for ::1 at 2021-01-23 17:08:41 +0100
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 105)
+  Rendered layout layouts/application.html.erb (Duration: 27.2ms | Allocations: 1385)
+Completed 200 OK in 37ms (Views: 34.0ms | ActiveRecord: 0.0ms | Allocations: 2262)
+
+
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mArticle Load (2.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/articles" for ::1 at 2021-01-23 17:15:11 +0100
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 124)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 1554)
+Completed 200 OK in 12ms (Views: 8.1ms | Allocations: 3103)
+
+
+Started GET "/articles" for ::1 at 2021-01-23 17:15:19 +0100
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 124)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 1554)
+Completed 200 OK in 11ms (Views: 10.0ms | Allocations: 2658)
+
+
+Started GET "/articles" for ::1 at 2021-01-23 17:19:26 +0100
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (Duration: 19.5ms | Allocations: 3569)
+  Rendered layout layouts/application.html.erb (Duration: 20.1ms | Allocations: 3634)
+Completed 500 Internal Server Error in 32ms (Allocations: 4708)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Articles listing page</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+    <% @articles.each do |article|
+        <tr>
+        <td><%= article.title %></td>
+        <td><%= article.description %></td>
+        <td>Placeholder</td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+        
+):
+1:    <h1>Articles listing page</h1>
+2:    
+3:    <table>
+4:        <thead>
+5:            <tr>
+6:                <th>Title</th>
+7:                <th>Description</th>
+8:                <th>Action</th>
+9:            </tr>
+10:        </thead>
+11:        
+12:        <tbody>
+13:        <% @articles.each do |article|
+14:            <tr>
+15:            <td><%= article.title %></td>
+16:            <td><%= article.description %></td>
+17:            <td>Placeholder</td>
+18:            </tr>
+19:            <% end %>
+20:        </tbody>
+21:    </table>
+22:            
+  
+app/views/articles/index.html.erb:14: syntax error, unexpected '<'
+app/views/articles/index.html.erb:14: syntax error, unexpected '<'
+app/views/articles/index.html.erb:14: syntax error, unexpected '<'
+app/views/articles/index.html.erb:14: syntax error, unexpected '<'
+app/views/articles/index.html.erb:14: syntax error, unexpected '<'
+app/views/articles/index.html.erb:14: syntax error, unexpected '<'
+Started GET "/articles" for ::1 at 2021-01-23 17:21:11 +0100
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/articles/index.html.erb:13
+  [1m[36mArticle Load (1.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:13
+  Rendered articles/index.html.erb within layouts/application (Duration: 21.6ms | Allocations: 4862)
+  Rendered layout layouts/application.html.erb (Duration: 27.6ms | Allocations: 6413)
+Completed 200 OK in 37ms (Views: 34.1ms | ActiveRecord: 2.8ms | Allocations: 7620)
+
+
