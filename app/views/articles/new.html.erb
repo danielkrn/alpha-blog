@@ -12,7 +12,6 @@
 
 
 
-
 <%= form_with scope: :article,  url: articles_path, local: true do |f| %>
 
 <p>
@@ -30,3 +29,5 @@
 </p>
 
 <% end %>
+
+<p><%= button_to 'Back to list', articles_path, method: :get %></p>
